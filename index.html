@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rate Monotonic</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/rmStyles.css">
+    </head>
+    <body>
+        <h1>Rate Monotonic Least Upper Bound Feasibility Test</h1> 
+        <h4>For Fifo Real Time Services</h4>
+        <form>
+            <ul>
+                <li>
+                    <label>Execution | Release</label>
+                </li>
+                <li>
+                    <input id="services" type="text" placeholder="Format: 1/2, 2/10, 1/20" required>
+                </li>
+                <li>
+                    <input type="button" value="Build Schedule" onclick="HandleUserInput()">
+                </li>
+            </ul>
+        </form>
+        <br>
+        <br>
+        <div class="results-container">
+            <table class="rm-results"></table>
+        </div>
+        <br>
+        <div class="grid-container">
+            <table class="serviceGrid" id="serviceTable"></table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        
+        <script type="text/javascript" src="javascript/HandleUserInput.js"></script> 
+        <script type="text/javascript" src="javascript/FifoSchedule.js"></script> 
+        <script type="text/javascript" src="javascript/ServicesGrid.js"></script> 
+        <script type="text/javascript" src="javascript/GridRequiredInput.js"></script> 
+        <script type="text/javascript" src="javascript/SystemFeasibility.js"></script> 
+    </body>
+</html> 
+
+
+
+
+
+
+
+

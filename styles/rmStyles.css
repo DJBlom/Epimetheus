@@ -1,0 +1,61 @@
+
+form, ul, li{
+    list-style-type: none;
+    display: inline;
+    padding-right: 40px;
+}
+
+.table-container table{
+    border-spacing: 0px;
+    padding-right: 5%;
+    overflow-x: scroll;
+}
+
+.grid{
+    border: 2px solid lightgrey;
+    border-right: 5px solid red;
+    padding: 10px 50px 10px 50px;
+}
+
+.services{
+    border: 2px solid lightgrey;
+    padding: 10px 50px 10px 50px;
+}
+
+.releasePeriods{
+    border: 2px solid lightgrey;
+    border-right: 3px solid black;
+    padding: 10px 50px 10px 50px;
+}
+
+.displayResults{
+    list-style-type: none;
+    padding: 10px 50px 10px 50px;
+    border-spacing: 30px;
+}
+
+.execution{
+    background-color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+    .table-container table {
+        border-spacing: 0px;
+        overflow-x: 100%;
+        text-align: center;
+    }
+
+    .grid{
+        border: 1px solid lightgrey;
+        border-right: 3px solid red;
+        text-align: center;
+        padding: 5px 10px 5px 10px;
+    }
+
+    .services{
+        background-color: grey;
+        border: 1px solid lightgrey;
+        text-align: center;
+        padding: 5px 10px 5px 10px;
+    }
+}
