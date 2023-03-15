@@ -6,32 +6,30 @@
         <title>Rate Monotonic</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/rmStyles.css">
+        <link rel="stylesheet" href="styles/mainStyles.css">
+        <link rel="stylesheet" href="styles/navStyles.css">
+        <link rel="stylesheet" href="styles/indexStyles.css">
     </head>
     <body>
-        <h1>Rate Monotonic Least Upper Bound Feasibility Test</h1> 
-        <h4>For Fifo Real Time Services</h4>
-        <form>
-            <ul>
-                <li>
-                    <label>Execution | Release</label>
-                </li>
-                <li>
-                    <input id="services" type="text" placeholder="Format: 1/2, 2/10, 1/20" required>
-                </li>
-                <li>
-                    <input type="button" value="Build Schedule" onclick="HandleUserInput()">
-                </li>
-            </ul>
-        </form>
-        <br>
-        <br>
-        <div class="results-container">
-            <table class="rm-results"></table>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li>
+                        <h1 id="logo">Epimetheus</h1>
+                        <h4 id="slogan">Rate Monotonic System Feasibility Test</h4> 
+                    </li>
+                    <li>
+                        <a class="page-links" href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-links" href="./test.html">Test</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <br>
-        <div class="grid-container">
-            <table class="serviceGrid" id="serviceTable"></table>
+        <br>
+        <div class="information-container">
         </div>
         <br>
         <br>
@@ -40,13 +38,6 @@
         <br>
         <br>
         <br>
-        
-        
-        <script type="text/javascript" src="javascript/HandleUserInput.js"></script> 
-        <script type="text/javascript" src="javascript/FifoSchedule.js"></script> 
-        <script type="text/javascript" src="javascript/ServicesGrid.js"></script> 
-        <script type="text/javascript" src="javascript/GridRequiredInput.js"></script> 
-        <script type="text/javascript" src="javascript/SystemFeasibility.js"></script> 
     </body>
 </html> 
 

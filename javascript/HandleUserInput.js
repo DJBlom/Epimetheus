@@ -12,7 +12,7 @@ function HandleUserInput() {
   let gridIsHealthy = true;
   const resultsElement = document.querySelector('.rm-results');
   const servicesElement = document.querySelector(".serviceGrid");
-  const userInput = document.getElementById("services").value;
+  const userInput = document.getElementById("input-execution-services").value;
 
   resultsElement.replaceChildren();
   servicesElement.replaceChildren();
