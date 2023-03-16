@@ -30,7 +30,7 @@ class ServicesGrid {
       const serviceData = document.createElement("td"); 
       const serviceInfo = document.createTextNode(`CPU_Service${row + 1}:`);
       serviceData.appendChild(serviceInfo);
-      serviceData.classList.add("grid");
+      serviceData.classList.add("cpu-service-columns");
       service.appendChild(serviceData);
       var executionPeriod = document.createElement("td"); 
       
@@ -47,6 +47,10 @@ class ServicesGrid {
 
         if (this.#schedule[row][columns - 1] == this.#isOccupied) {
           executionPeriod.classList.add("execution");
+          service.appendChild(executionPeriod);
+        }
+        else {
+          executionPeriod.classList.add("services");
           service.appendChild(executionPeriod);
         }
       }

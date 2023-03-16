@@ -21,16 +21,19 @@ class SystemFeasibility {
     }
 
     DisplayResults(resultsElement) {
-        const list = document.createElement("ul");
-        list.classList.add("displayResults");
+        const list = document.createElement("li");
 
         const utilityItem = document.createElement("li");
-        const utilityNode = document.createTextNode("Utility: " + this.#ComputeUtility() + "%");
+        const utilityNode = document.createTextNode("Utility: " + this.#ComputeUtility() + "% |");
+        utilityItem.classList.add("displayResults");
         utilityItem.appendChild(utilityNode);
         
+        
         const rmLubItem = document.createElement('li');
-        const rmLubNode = document.createTextNode("RM - LUB: " + this.#ComputeRmLub() + "%");
+        const rmLubNode = document.createTextNode("RM - LUB: " + this.#ComputeRmLub() + "% |");
+        rmLubItem.classList.add("displayResults");
         rmLubItem.appendChild(rmLubNode);
+        
 
         const feasibilityItem = document.createElement('li');
         let feasibilityNode;
@@ -40,7 +43,9 @@ class SystemFeasibility {
         else {
             feasibilityNode = document.createTextNode("System Feasibility: FAILED");
         }
+        feasibilityItem.classList.add("displayResults");
         feasibilityItem.appendChild(feasibilityNode);
+
 
         list.appendChild(utilityItem);
         list.appendChild(rmLubItem);

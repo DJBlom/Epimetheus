@@ -58,17 +58,17 @@ class FifoScheduler {
   }
 
   #CreateColumnsToOccupy() {
-    this.#occupiedColumns = new Array(this.#grid.columns);
+    this.#occupiedColumns = new Array(this.#grid.columns + 1);
 
-    for (let i = 0; i <= this.#grid.columns; i++) {
+    for (let i = 0; i <= (this.#grid.columns + 1); i++) {
       this.#occupiedColumns[i] = 0;
     }
   }
 
   #CreateSchedule() {
-    this.#schedule = new Array(this.#grid.rows);
+    this.#schedule = new Array(this.#grid.rows + 1);
 
-    for (let i = 0; i < this.#grid.rows; i++) {
+    for (let i = 0; i < (this.#grid.rows + 1); i++) {
       this.#schedule[i] = new Array(this.#grid.columns).fill(0);
     }
   }

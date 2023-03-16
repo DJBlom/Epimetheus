@@ -9,6 +9,13 @@
         <link rel="stylesheet" href="styles/mainStyles.css">
         <link rel="stylesheet" href="styles/navStyles.css">
         <link rel="stylesheet" href="styles/testStyles.css">
+
+        
+        <script type="text/javascript" src="javascript/HandleUserInput.js"></script> 
+        <script type="text/javascript" src="javascript/FifoSchedule.js"></script> 
+        <script type="text/javascript" src="javascript/ServicesGrid.js"></script> 
+        <script type="text/javascript" src="javascript/GridRequiredInput.js"></script> 
+        <script type="text/javascript" src="javascript/SystemFeasibility.js"></script> 
     </head>
     <body>
         <div class="nav-container">
@@ -27,43 +34,22 @@
                 </ul>
             </nav>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="input-container">
-            <ul>
-                <li>
-                    <label id="input-label">Execution | Release</label>
-                </li>
-                <li>
-                    <input id="input-execution-services" type="text" placeholder="Format: 1/2, 2/10, 1/20" required>
-                </li>
-                <li>
-                    <input id="input-button" type="button" value="Test" onclick="HandleUserInput()">
-                </li>
-            </ul>
-            <div class="results-container">
-                <table class="rm-results"></table>
+        <div class="test-container">
+            <div class="input-container">
+                <lable id="input-label">Execution | Release</lable>
+                <ul>
+                    <li>
+                        <input id="input-execution-services" type="text" placeholder="Format: 1/2, 2/10, 1/20" required>
+                    </li>
+                    <li>
+                        <input id="input-button" type="button" value="Test" onclick="HandleUserInput()">
+                    </li>
+                </ul>
             </div>
-            <br>
+            <div class="rm-results"></div>
             <div class="grid-container">
                 <table class="serviceGrid" id="serviceTable"></table>
             </div>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        
-        
-        <script type="text/javascript" src="javascript/HandleUserInput.js"></script> 
-        <script type="text/javascript" src="javascript/FifoSchedule.js"></script> 
-        <script type="text/javascript" src="javascript/ServicesGrid.js"></script> 
-        <script type="text/javascript" src="javascript/GridRequiredInput.js"></script> 
-        <script type="text/javascript" src="javascript/SystemFeasibility.js"></script> 
     </body>
 </html> 

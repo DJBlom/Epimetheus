@@ -1,48 +1,25 @@
 
 body{
-    margin: 0;
+    margin-bottom: 50px;
     padding: 0;
     background-image: url("../images/background.jpg");
     font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: relative;
     display: flexbox;
-    justify-self: absolute;
     align-self: absolute;
     place-self: absolute;
 }
 
-li{
+ul, li{
+    margin: 0;
     display: inline;
     list-style-type: none;
 }
 
-.grid{
-    border: 2px solid lightgrey;
-    border-right: 5px solid red;
-    padding: 10px 50px 10px 50px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+p{
+    font-size: large;
+    padding: inherit;
+    margin: 15px;
 }
 
-.services{
-    border: 2px solid lightgrey;
-    padding: 10px 50px 10px 50px;
-}
 
-.releasePeriods{
-    border: 2px solid lightgrey;
-    border-right: 3px solid black;
-    padding: 10px 50px 10px 50px;
-}
-
-.displayResults{
-    list-style-type: none;
-    padding: 10px 50px 10px 50px;
-    border-spacing: 30px;
-}
-
-.execution{
-    background-color: grey;
-}
