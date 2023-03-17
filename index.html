@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Information</title>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Rate Monotonic</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Page-Enter" content="blendTrans(duration=0)" />
+        <meta http-equiv="Page-Exit" content="blendTrans(duration=0)" />
+
         <link rel="stylesheet" href="styles/mainStyles.css">
         <link rel="stylesheet" href="styles/navStyles.css">
         <link rel="stylesheet" href="styles/indexStyles.css">
+        
 
+        <script type="text/javascript" src="javascript/PageTransitions.js"></script> 
+        <script type="text/x-mathjax-config"></script>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
+        <div class="page-transition-1 is-active"></div>
+
         <div class="nav-container">
             <nav>
                 <ul>
@@ -32,7 +41,7 @@
         </div>
         <div class="information-container">
             <li id="sigma">
-                $$\sum_{i = 1}^m \frac {C_i} {T_i} \leq m(2^\frac {1}{m} - 1)$$
+                $$U = \sum_{i = 1}^m \frac {C_i} {T_i} \leq m(2^\frac {1}{m} - 1)$$
             </li>
             <li>
                 <p>
