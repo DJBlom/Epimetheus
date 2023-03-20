@@ -134,7 +134,7 @@
 
     .cpu-service-columns{
         font-size: 15px;
-        border-right: 10px solid red;
+        border-right: 10px solid orange;
         padding: 10px;
         box-shadow: 2px 2px 50px 2px;
     }
