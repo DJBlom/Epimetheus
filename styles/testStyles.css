@@ -62,12 +62,7 @@
 
 .grid-container{
     border-radius: 10px;
-    overflow: scroll;
-}
-
-.grid-container::-webkit-scrollbar{
-    display: none;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .cpu-service-columns{
