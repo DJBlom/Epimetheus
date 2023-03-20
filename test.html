@@ -7,8 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Page-Enter" content="blendTrans(duration=0)" />
-        <meta http-equiv="Page-Exit" content="blendTrans(duration=0)" />
 
         <link rel="stylesheet" href="styles/mainStyles.css">
         <link rel="stylesheet" href="styles/navStyles.css">
@@ -23,39 +21,45 @@
         <script type="text/javascript" src="javascript/SystemFeasibility.js"></script> 
     </head>
     <body>
-        <div class="page-transition-1 is-active"></div>
+         <div class="page-transition-1 is-active"></div>
+        <div class="name-container">
+            <li id="website-name">
+                Epimetheus
+            </li>
+            <li id="slogan">
+                Rate Monotonic System Feasibility Test
+            </li>
+        </div>
         <div class="nav-container">
-            <nav>
-                <ul>
-                    <li>
-                        <h1 id="logo">Epimetheus</h1>
-                        <h4 id="slogan">Rate Monotonic System Feasibility Test</h4> 
-                    </li>
-                    <li>
-                        <a class="page-links" href="./index.html">Home</a>
-                    </li>
-                    <li>
-                        <a class="page-links" href="./test.html">Test</a>
-                    </li>
-                </ul>
-            </nav>
+            <li>
+                <a class="page-links" href="./index.html">Home</a>
+                <a class="page-links" href="./test.html">Test</a>
+            </li>
         </div>
         <div class="test-container">
             <div class="input-container">
-                <lable id="input-label">Execution | Release</lable>
-                <ul>
-                    <li>
-                        <input id="input-execution-services" type="text" placeholder="Format: 1/2, 2/10, 1/20" required>
-                    </li>
-                    <li>
-                        <input id="input-button" type="button" value="Test" onclick="HandleUserInput()">
-                    </li>
-                </ul>
+                <li id="input-label">
+                    Execution | Deadline
+                </li>
+                <li>
+                    <input id="input-execution-services" type="text" placeholder="Format: 1/2, 1/20, 1/30" required>
+                </li>
+                <li>
+                    <input id="input-button" type="button" value="Test" onclick="HandleUserInput()">
+                </li>
             </div>
-            <div class="rm-results"></div>
+            <div class="rm-results">Results...</div>
             <div class="grid-container">
                 <table class="serviceGrid" id="serviceTable"></table>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <footer id="footer">
+            <p>Author: Blom, J. D.</p>
+            <p>Github: <a id="github-link" href="https://github.com/DJBlom">github.com/DJBlom</a></p>
+            <p>Email: dawidjblom@gmail.com</p>
+        </footer>
     </body>
 </html> 

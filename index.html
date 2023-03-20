@@ -7,8 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Page-Enter" content="blendTrans(duration=0)" />
-        <meta http-equiv="Page-Exit" content="blendTrans(duration=0)" />
 
         <link rel="stylesheet" href="styles/mainStyles.css">
         <link rel="stylesheet" href="styles/navStyles.css">
@@ -22,33 +20,80 @@
     </head>
     <body>
         <div class="page-transition-1 is-active"></div>
-
+        <div class="name-container">
+            <li id="website-name">
+                Epimetheus
+            </li>
+            <li id="slogan">
+                Rate Monotonic System Feasibility Test
+            </li>
+        </div>
         <div class="nav-container">
-            <nav>
-                <ul>
-                    <li>
-                        <h1 id="logo">Epimetheus</h1>
-                        <h4 id="slogan">Rate Monotonic System Feasibility Test</h4> 
-                    </li>
-                    <li>
-                        <a class="page-links" href="./index.html">Home</a>
-                    </li>
-                    <li>
-                        <a class="page-links" href="./test.html">Test</a>
-                    </li>
-                </ul>
-            </nav>
+            <li>
+                <a class="page-links" href="./index.html">Home</a>
+                <a class="page-links" href="./test.html">Test</a>
+            </li>
         </div>
         <div class="information-container">
-            <li id="sigma">
-                $$U = \sum_{i = 1}^m \frac {C_i} {T_i} \leq m(2^\frac {1}{m} - 1)$$
-            </li>
-            <li>
+            <div id="information">
+                <div id="sigma">
+                    $$U = \sum_{i = 1}^m \frac {C_i} {T_i} \leq m(2^\frac {1}{m} - 1)$$
+                </div>
+                <div class="information-headings">Rate Monotonic Scheduling Algorithm</div>
                 <p>
-                    Information about the rate monotonic least upper bound.
+                    Rate Monotonic RM is a pre-emptive, fixed priority, multi-programming, run-to-completion scheduling algorithm 
+                    used in real-time systems. Furthermore, its domain is critical systems, where if a service exceeds its execution 
+                    time limit, it could mean loss of life or capital. Nevertheless, systems that are less constrained can also benefit 
+                    from it. According to Lui & Layland, there are a few assumptions that we are required to make to obtain any analytical 
+                    results about program behavior in hard-real-time situations. 
                 </p>
-            </li>
+                <p>
+                    However, these assumptions provide us with guidance but are not always necessary. Firstly, the requests for all tasks 
+                    for which hard deadlines exist are periodic, with constant intervals between requests. Secondly, every service in the 
+                    set of services must complete before its next request period. Thirdly, each task is independent and does not rely on 
+                    another to finish or initiate. Fourthly, the run-time for each service is constant for that task and does not vary with 
+                    time, for example, the time a processor needs to execute the task without interruption. Finally, any nonperiodic services 
+                    in the system are special. They are usually initialization or failure-recovery routines. They displace periodic services 
+                    while they are running. They do not have hard critical deadlines. Consequently, now that we know what assumptions to make, 
+                    how can we measure and visualize this arcane art? Thankfully, Lui & Layland derived a mathematical model called the Rate 
+                    Monotonic Least Upper Bound.
+                </p>
+                <div class="information-headings">Rate Monotonic Least Upper Bound</div>
+                <p>
+                    The mathematical model you see above is the famous Rate Monotonic Least Upper Bound RM-LUB, derived by Lui & Layland in 1973. 
+                    Applying this model, we determine if a system's schedule for a set of 'm' periodic tasks with unique execution times will 
+                    always meet its deadlines. However, this is only true if the total CPU utilization 'U' is below the LUB. Therefore, a system 
+                    is feasible if all its task computation time does not exceed the LUB. An example of a passing system using the RM-LUB is if 
+                    30% of the system running time is idle. For instance, if the RM-LUB is 70%, then the remaining 30% would be dedicated to services 
+                    that do not require them to meet their deadlines. However, this percentage is debatable since a system can run smoothly with less 
+                    than 30% slack time, but that is up to the architect to decide. In reality, reaching 30% idle time is not easy.
+                </p>
+                <p>
+                    Utilizing the model above, let's assume we have a system with three services. Service 1 has an execution time of one and a release 
+                    period of two. $$\frac {1}{2}$$ Service 2 has an execution time of one every tenth release period of twenty. $$\frac {1}{20}$$ 
+                    Service 3 has one execution time for a release period of thirty. $$\frac {1}{30}$$ Where the execution times 'C' and release 
+                    periods or deadlines 'T' are summed up and divided, providing us with the total CPU utilization. Finally, we verify that 'U' 
+                    is less than or equal to the LUB. For instance, $$\frac{1}{2} + \frac{1}{20} + \frac{1}{30} \leq 3(2^\frac {1}{3} - 1)$$ completing 
+                    the math we end up with 'U' = 58.33%, LUB = 77.98%, and slack time of 19.65%. Now that we know how the RM-LUB works and how to use 
+                    it to verify the feasibility of our system, what does this website offer? 
+                </p>
+                <div class="information-headings">What This Website Offers</div>
+                <p>
+                    This website provides a quick way to verify your system's feasibility using the RM-LUB with minimum effort. The first step 
+                    would be to head over to the <a class="paragraph-page-links" href="./test.html">Test</a> page and decide what the execution 
+                    time for each deadline will be. After that, provide the input, after which the underlying algorithm will spit out your system's 
+                    total utilization 'U', the RM-LUB percentage, the slack time, the feasibility status, and the visual representation of your schedule. 
+                </p>
+            </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <footer id="footer">
+            <p>Author: Blom, J. D.</p>
+            <p>Github: <a id="github-link" href="https://github.com/DJBlom">github.com/DJBlom</a></p>
+            <p>Email: dawidjblom@gmail.com</p>
+        </footer>
     </body>
 </html> 
 

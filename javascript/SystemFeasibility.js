@@ -12,7 +12,6 @@ class SystemFeasibility {
     #totalServices;
     #releasePeriods;
     #executionTimes;
-    #slackTime;
 
     constructor (gridRequiredInput) {
         this.#totalServices = gridRequiredInput.GetTotalNumberOfServices();
@@ -22,23 +21,28 @@ class SystemFeasibility {
 
     DisplayResults(resultsElement) {
         const list = document.createElement("li");
+        list.classList.add("grid-container")
 
         const utilityItem = document.createElement("li");
-        const utilityNode = document.createTextNode("Utility: " + this.#ComputeUtility() + "% |");
+        const utilityNode = document.createTextNode("Utility: " + this.#ComputeUtility() + "%");
         utilityItem.classList.add("displayResults");
         utilityItem.appendChild(utilityNode);
         
         
         const rmLubItem = document.createElement('li');
-        const rmLubNode = document.createTextNode("RM - LUB: " + this.#ComputeRmLub() + "% |");
+        const rmLubNode = document.createTextNode("Rate Monotonic Least Upper Bound: " + this.#ComputeRmLub() + "%");
         rmLubItem.classList.add("displayResults");
         rmLubItem.appendChild(rmLubNode);
         
+        const slackTimeItem = document.createElement('li');
+        let slackTimeNode = document.createTextNode("Slack Time: " + this.#ComputeSlackTime() + "%");
+        slackTimeItem.classList.add("displayResults");
+        slackTimeItem.appendChild(slackTimeNode);
 
         const feasibilityItem = document.createElement('li');
         let feasibilityNode;
         if (this.#SystemIsFeasible() == true) {
-            feasibilityNode = document.createTextNode("System Feasibility: PASSED with " + this.#slackTime + "% slack time.");
+            feasibilityNode = document.createTextNode("System Feasibility: PASSED");
         }
         else {
             feasibilityNode = document.createTextNode("System Feasibility: FAILED");
@@ -47,9 +51,11 @@ class SystemFeasibility {
         feasibilityItem.appendChild(feasibilityNode);
 
 
+        list.appendChild(feasibilityItem);
         list.appendChild(utilityItem);
         list.appendChild(rmLubItem);
-        list.appendChild(feasibilityItem);
+        list.appendChild(slackTimeItem);
+        
         resultsElement.append(list);
     }
 
@@ -61,14 +67,17 @@ class SystemFeasibility {
         const lowerBound = 0;
         
         if ((feasibility > lowerBound)) {
-            this.#slackTime = (rmLub - utility).toFixed(2);
             isFeasible = true;
-        }
-        else {
-            this.#slackTime = (rmLub - utility).toFixed(2);
         }
 
         return isFeasible;
+    }
+
+    #ComputeSlackTime() {
+        const rmLub = this.#ComputeRmLub();
+        const utility = this.#ComputeUtility();
+        const slackTime = (rmLub - utility);
+        return slackTime.toFixed(2);
     }
 
     #ComputeUtility() {
@@ -78,7 +87,9 @@ class SystemFeasibility {
             newUtility = newUtility + (this.#executionTimes[i] / this.#releasePeriods[i]);
         } 
 
-        return newUtility.toFixed(4) * 100;
+        newUtility = newUtility * 100;
+
+        return newUtility.toFixed(2);
     }
 
     #ComputeRmLub() {
