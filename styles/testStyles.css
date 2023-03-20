@@ -62,6 +62,7 @@
 
 .grid-container{
     border-radius: 10px;
+    overflow: scroll;
 }
 
 .cpu-service-columns{
