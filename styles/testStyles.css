@@ -6,6 +6,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 15px 3px;
     border-radius: 10px;
+    overflow: auto;
 }
 
 .input-container{
