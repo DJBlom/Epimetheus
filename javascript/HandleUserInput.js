@@ -20,7 +20,7 @@ function HandleUserInput() {
 
   const gridRequiredInput = new GridRequiredInput();
   if (gridRequiredInput.HandleInput(userInput) == false) {
-    alert("Check Your Format or length.");
+    alert("Check Input Format or Length.");
     gridIsHealthy = false;
   }
   else {
