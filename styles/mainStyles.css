@@ -9,7 +9,7 @@ body {
 }
 
 p{
-    letter-spacing: 0.5px;
+    word-spacing: 1px;
     font-size: 15px;
 }
 
