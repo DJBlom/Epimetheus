@@ -33,7 +33,7 @@
 }
 
 #input-button{
-    float: inline-end;
+    float: right;
     border: none;
     border-radius: 5px;
     padding: 4px 30px;
@@ -68,7 +68,7 @@
 
 .cpu-service-columns{
     font-size: larger;
-    border-right: 20px solid red;
+    border-right: 20px solid orange;
     padding: 20px;
     color: rgb(255, 153, 51);
     background-color: rgba(0, 0, 0, 0.3);
