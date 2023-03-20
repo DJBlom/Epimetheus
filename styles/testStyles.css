@@ -8,11 +8,6 @@
     border-radius: 10px;
 }
 
-.test-container::-webkit-scrollbar{
-    display: none;
-    overflow: hidden;
-}
-
 .input-container{
     padding: inherit;
     border-radius: 10px;
@@ -68,6 +63,11 @@
 .grid-container{
     border-radius: 10px;
     overflow: scroll;
+}
+
+.grid-container::-webkit-scrollbar{
+    display: none;
+    overflow: hidden;
 }
 
 .cpu-service-columns{
